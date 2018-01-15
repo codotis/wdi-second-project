@@ -20,6 +20,7 @@ function createRoute(req, res, next) {
     .then(() => res.redirect('/tracks'))
     .catch((err) => {
       if(err.name === 'ValidationError') {
+        console.log(err);
         return res.badRequest('/tracks/new', err.toString());
       }
       next(err);
