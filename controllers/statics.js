@@ -4,7 +4,8 @@ function indexRoute(req, res) {
   User
     .find()
     .exec()
-    .then((users) => res.render('index', { users }));
+    .then((users) => res.render('index', { users }))
+    .catch((err) => console.log('ERR', err));
 }
 
 function secretRoute(req, res) {

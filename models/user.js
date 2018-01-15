@@ -4,7 +4,8 @@ const bcrypt = require('bcrypt');
 const userSchema = new mongoose.Schema({
   username: String,
   email: String,
-  password: { type: String, required: true }
+  password: { type: String, required: true },
+  following: [{ type: mongoose.Schema.ObjectId, ref: 'User', required: true }] // array of references to other users
 });
 
 userSchema.virtual('passwordConfirmation')

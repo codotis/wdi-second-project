@@ -1,19 +1,19 @@
 const User = require('../models/user');
 
 //RENDER LOG IN FORM
-function newRoute(req, res) {
+function sessionsNew(req, res) {
   res.render('sessions/new');
 }
 
 //LOG A USER IN
 
-function createRoute(req, res) {
+function sessionsCreate(req, res) {
   User
     .findOne({ email: req.body.email })
     .exec()
     .then((user) => {
       if(!user || !user.validatePassword(req.body.password)) {
-        return res.status(401).render('sessions/new', { message: 'Unrecognised credentials‍' });
+        return res.status(401).render('sessions/new', { message: '‍Unknown login' });
       }
 
       req.session.userId = user.id;
@@ -24,7 +24,12 @@ function createRoute(req, res) {
     });
 }
 
+function sessionsDelete(req, res) {
+  return req.session.regenerate(() => res.redirect('/'));
+}
+
 module.exports = {
-  new: newRoute,
-  create: createRoute
+  new: sessionsNew,
+  create: sessionsCreate,
+  delete: sessionsDelete
 };

@@ -32,18 +32,6 @@ app.use(session({
 app.use((req, res, next) => {
   if (!req.session.userId) return next();
 
-  User
-    .findById(req.session.userId)
-    .then((user) => {
-
-      req.session.userId = user._id;
-
-      res.locals.user = user;
-      res.locals.isLoggedIn = true;
-
-      next();
-    });
-
   // IF WE CANT FIND THE USER
   User
     .findById(req.session.userId)
