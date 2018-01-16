@@ -42,7 +42,5 @@ router.route('/login')
 router.route('/logout')
   .get(sessions.delete);
 
-router.all('*', (req, res) => res.notFound());
-
 
 module.exports = router;

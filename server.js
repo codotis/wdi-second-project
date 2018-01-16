@@ -7,6 +7,7 @@ const expressLayouts = require('express-ejs-layouts');
 const flash = require('express-flash');
 const routes         = require('./config/routes');
 const User           = require('./models/user');
+const authentication = require('./lib/authentication');
 const mongoose       = require('mongoose');
 mongoose.Promise     = require('bluebird');
 const { port, env, dbURI, secret } = require('./config/environment');
@@ -41,28 +42,7 @@ app.use(session({
 app.use(flash());
 
 
-app.use((req, res, next) => {
-  if (!req.session.userId) return next();
-
-  // IF WE CANT FIND THE USER
-  User
-    .findById(req.session.userId)
-    .exec()
-    .then((user) => {
-      if(!user) {
-        return req.session.regenerate(() => {
-          res.redirect('/');
-        });
-      }
-
-      req.session.userId = user._id;
-
-      res.locals.user = user;
-      res.locals.isLoggedIn = true;
-
-      next();
-    });
-});
+app.use(authentication);
 
 
 app.use(routes);

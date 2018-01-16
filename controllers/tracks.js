@@ -96,7 +96,7 @@ function createCommentRoute(req, res, next) {
       track.comments.push(req.body);
       return track.save();
     })
-    .then((track) => res.redirect(`/track/${track.id}`))
+    .then((track) => res.redirect(`/tracks/${track.id}`))
     .catch(next);
 }
 
