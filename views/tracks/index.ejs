@@ -11,8 +11,8 @@
 
       <% tracks.forEach((track) => { %>
         <a href="/tracks/<%= track.id %>">
-        <h2><%= track.artist %> - <%= track.title %></h2>
-
+        <h2 class="text-center"><%= track.artist %> - <%= track.title %></h2>
+        </a>
         <iframe width="560" height="315" src="https://www.youtube.com/embed/<%= track.link %>" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
         <h2> posted by: <%= track.createdBy.username %> </h2>
@@ -23,6 +23,6 @@
       </div>
       <div class="col-3">
       </div>
-      
+
     </div>
   </div>
