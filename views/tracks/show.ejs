@@ -1,10 +1,16 @@
-<h1>Show Track</h1>
-<h2> posted by: <%= track.createdBy.username %> </h2>
-<h3><%= track.artist %> - <%= track.title %></h4>
+
+<div class="container">
+  <div class="row">
+    <div class="col-3">
+    </div>
+
+    <div class="col-6">
+
+<h1 class="text-center"><%= track.artist %> - <%= track.title %></h4>
+  <h2 class="text-center"> (posted by: <%= track.createdBy.username %>)</h2>
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/<%= track.link %>" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-
-<h3><%= track.blip %></h3>
+<p class="text-center"><%= track.blip %></p>
 
 <%# //IF THE USER IS LOGGED IN AND THEY'VE ADDED THE TRACK, THEY CAN EDIT IT. %>
 <% if(locals.isLoggedIn && track.belongsTo(user)) { %>
@@ -16,8 +22,9 @@
 <% } %>
 
 <% track.comments.forEach((comment) => { %>
+  <small><%= comment.createdBy.username %> said:- </small>
+
   <p><%= comment.content %></p>
-  <small><%= comment.createdBy.username %></small>
 
   <% if(locals.isLoggedIn && comment.belongsTo(user)) { %>
     <form method="POST" action="/tracks/<%= track.id %>/comments/<%= comment.id %>">
@@ -36,3 +43,10 @@
     </form>
   </section>
 <% } %>
+
+</div>
+<div class="col-3">
+</div>
+
+</div>
+</div>
