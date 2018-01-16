@@ -2,10 +2,10 @@ const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 
 const userSchema = new mongoose.Schema({
-  username: String,
+  username: { type: String, required: true },
   email: String,
   password: { type: String, required: true },
-  following: [{ type: mongoose.Schema.ObjectId, ref: 'User', required: true }] // array of references to other users
+  following: [{ type: mongoose.Schema.ObjectId, ref: 'User'}] // array of references to other users
 });
 
 userSchema.virtual('passwordConfirmation')
@@ -32,3 +32,5 @@ userSchema.methods.validatePassword = function validatePassword(password) {
 };
 
 module.exports = mongoose.model('User', userSchema);
+
+// , required: true 

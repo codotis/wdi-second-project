@@ -1,7 +1,5 @@
 <h1>Show Track</h1>
 
-<%= track.createdBy.username %>
-
 
 <h2><%= track.artist %> - <%= track.title %></h2>
 
@@ -16,3 +14,31 @@
   <input type="hidden" name="_method" value="DELETE">
   <button>Delete</button>
 </form>
+
+
+<% if(locals.isLoggedIn) { %>
+  <section>
+    <h4>Leave a comment</h4>
+    <form method="POST" action="/hotels/<%= hotel.id %>/comments">
+      <textarea name="content" id="content" placeholder="Comment"></textarea>
+      <button class="button">Leave a comment</button>
+    </form>
+  </section>
+<% } %>
+
+
+
+<section>
+  <h4>Comments</h4>
+  <% hotel.comments.forEach((comment) => { %>
+    <p><%= comment.content %></p>
+    <small><%= comment.createdBy.username %></small>
+
+    <% if(locals.isLoggedIn) { %>
+      <form method="POST" action="/hotels/<%= hotel.id %>/comments/<%= comment.id %>">
+        <input type="hidden" name="_method" value="DELETE">
+        <button>Delete</button>
+      </form>
+    <% } %>
+  <% }) %>
+</section>

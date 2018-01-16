@@ -84,6 +84,7 @@ function deleteRoute(req, res, next) {
 }
 
 function createCommentRoute(req, res, next) {
+
   req.body.createdBy = req.user;
 
   Track
@@ -95,15 +96,8 @@ function createCommentRoute(req, res, next) {
       track.comments.push(req.body);
       return track.save();
     })
-    .then((track) => {
-      res.redirect(`/tracks/${track.id}`);
-    })
-    .catch((err) => {
-      if(err.name === 'ValidationError') {
-        return res.badRequest(`/tracks/${req.params.id}`, err.toString());
-      }
-      next(err);
-    });
+    .then((track) => res.redirect(`/track/${track.id}`))
+    .catch(next);
 }
 
 function deleteCommentRoute(req, res, next) {
