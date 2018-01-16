@@ -6,7 +6,6 @@ const session        = require('express-session');
 const expressLayouts = require('express-ejs-layouts');
 const flash = require('express-flash');
 const routes         = require('./config/routes');
-const User           = require('./models/user');
 const authentication = require('./lib/authentication');
 const mongoose       = require('mongoose');
 mongoose.Promise     = require('bluebird');
