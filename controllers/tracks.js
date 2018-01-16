@@ -3,6 +3,7 @@ const Track = require('../models/track');
 function indexRoute(req, res, next) {
   Track
     .find()
+    .populate('createdBy')
     .exec()
     .then((tracks) => res.render('tracks/index', { tracks }))
     .catch(next);
@@ -30,7 +31,7 @@ function createRoute(req, res, next) {
 function showRoute(req, res, next) {
   Track
     .findById(req.params.id)
-    .populate('createdBy comments.createdBy')
+    .populate('createdBy')
     .exec()
     .then((track) => {
       if(!track) return res.notFound();
