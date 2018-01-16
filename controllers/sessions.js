@@ -1,11 +1,8 @@
 const User = require('../models/user');
 
-//RENDER LOG IN FORM
 function sessionsNew(req, res) {
   res.render('sessions/new');
 }
-
-//LOG A USER IN
 
 function sessionsCreate(req, res) {
   User

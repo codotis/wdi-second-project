@@ -1,5 +1,4 @@
-const express  = require('express');
-const router   = express.Router();
+const router = require('express').Router();
 
 const statics = require('../controllers/statics');
 const registrations = require('../controllers/registrations');
@@ -42,5 +41,8 @@ router.route('/login')
 
 router.route('/logout')
   .get(sessions.delete);
+
+router.all('*', (req, res) => res.notFound());
+
 
 module.exports = router;

@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
 const session        = require('express-session');
 const expressLayouts = require('express-ejs-layouts');
+const flash = require('express-flash');
 const routes         = require('./config/routes');
 const User           = require('./models/user');
 const mongoose       = require('mongoose');
@@ -36,6 +37,8 @@ app.use(session({
   resave: false,
   saveUninitialized: false
 }));
+
+app.use(flash());
 
 
 app.use((req, res, next) => {

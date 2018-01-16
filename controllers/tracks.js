@@ -31,7 +31,7 @@ function createRoute(req, res, next) {
 function showRoute(req, res, next) {
   Track
     .findById(req.params.id)
-    .populate('createdBy')
+    .populate('createdBy comments.createdBy')
     .exec()
     .then((track) => {
       if(!track) return res.notFound();
