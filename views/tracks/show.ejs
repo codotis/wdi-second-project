@@ -20,6 +20,16 @@
           </form>
           <% } %>
 
+          <% if(locals.isLoggedIn) { %>
+            <section>
+            <p class="comment-color">Add comment below</p>
+            <form method="POST" action="/tracks/<%= track.id %>/comments">
+            <textarea class="form-control" rows="3" name="content" id="content" placeholder="Comment"></textarea>
+            <button class="btn btn-primary btn-block">Leave a comment</button>
+            </form>
+            </section>
+            <% } %>
+
           <% track.comments.forEach((comment) => { %>
 
             <small class="comment-color"><%= comment.createdBy.username %> said:- </small>
@@ -34,15 +44,7 @@
               <% } %>
               <% }) %>
 
-              <% if(locals.isLoggedIn) { %>
-                <section>
-                <p class="comment-color">Add comment below</p>
-                <form method="POST" action="/tracks/<%= track.id %>/comments">
-                <textarea class="form-control" rows="3" name="content" id="content" placeholder="Comment"></textarea>
-                <button class="btn btn-primary btn-block">Leave a comment</button>
-                </form>
-                </section>
-                <% } %>
+
 
               </div>
               <div class="col-3">
