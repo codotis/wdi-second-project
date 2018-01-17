@@ -4,7 +4,7 @@ const statics = require('../controllers/statics');
 const registrations = require('../controllers/registrations');
 const sessions = require('../controllers/sessions');
 const tracks = require('../controllers/tracks');
-const users = require('../controllers/users')
+const users = require('../controllers/users');
 
 router.route('/')
   .get(statics.index);
@@ -30,11 +30,11 @@ router.route('/tracks/:id/comments')
 router.route('/tracks/:id/comments/:commentId')
   .delete(tracks.deleteComment);
 
-// router.route('/following')
-//   .get(users.index);
-//
-//
-// router.route('/following/:id')
+router.route('/users/:id')
+  .get(users.show);
+
+router.route('/users/follow/:id')
+  .get(users.follow);
 
 router.route('/register')
   .get(registrations.new)

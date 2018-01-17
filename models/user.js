@@ -5,7 +5,8 @@ const userSchema = new mongoose.Schema({
   username: { type: String, required: true },
   email: String,
   password: { type: String, required: true },
-  following: [{ type: mongoose.Schema.ObjectId, ref: 'User'}] // array of references to other users
+  following: [{ type: mongoose.Schema.ObjectId, ref: 'User'}],
+  followers: [{ type: mongoose.Schema.ObjectId, ref: 'User'}]
 });
 
 userSchema.virtual('passwordConfirmation')

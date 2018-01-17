@@ -1,0 +1,7 @@
+<h1>User profile</h1>
+
+<p><%= user.username %></p>
+<a href="/users/follow/<%= user.id %>">Follow</a>
+
+<p>Followers: <span><%= user.followers.length %></span></p>
+<p>Following: <span><%= user.following.length %></span></p>

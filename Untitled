@@ -1,11 +1,12 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand" href="#">blipmusic</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-    <ul class="navbar-nav mr-auto">
+    <div class="navbar-nav">
+      <ul class="ml-auto">
       <% if (!locals.isLoggedIn) { %>
         <li class="nav-item">
           <a class="nav-item nav-link" href="/register">Register</a>
@@ -24,15 +25,14 @@
           <a class="nav-item nav-link" href="/tracks/new">Post Track</a>
         </li>
         <li class="nav-item">
-        </ul>
-        <ul class="navbar-item ml-auto"
+          <a class="nav-item nav-link" href="/following">Following</a>
+        </li>
+        <li class="nav-item">
           <a class="nav-item nav-link" href="/logout">Sign out</a>
         </li>
-        </ul>
       <% } %>
     </ul>
     </div>
   </div>
 </nav>
-
 <div class="jumbotron"></div>

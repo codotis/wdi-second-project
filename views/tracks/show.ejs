@@ -9,9 +9,6 @@
       <h1 class="text-center"><%= track.artist %> - <%= track.title %></h4>
         <h2 class="text-center"> (posted by: <%= track.createdBy.username %>)</h2>
 
-        <iframe width="560" height="500" src="https://www.youtube.com/embed/<%= track.link %>" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-        <p class="text-center"><%= track.blip %></p>
-
         <% if(locals.isLoggedIn && track.belongsTo(user)) { %>
           <a href="/tracks/<%= track.id %>/edit">Edit Track</a>
           <form method="POST" action="/tracks/<%= track.id %>">
@@ -19,6 +16,10 @@
           <button type="submit" class="btn btn-light">Remove post</button>
           </form>
           <% } %>
+
+        <iframe width="560" height="500" src="https://www.youtube.com/embed/<%= track.link %>" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        <p class="text-center"><%= track.blip %></p>
+
 
           <% if(locals.isLoggedIn) { %>
             <section>
