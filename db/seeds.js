@@ -61,10 +61,10 @@ User
         blip: 'A.K. Paul, the reclusive-but-not-in-comparison-to-brother-Jai producer, has remixed James Vincent McMorrow\'s "Rising Water".',
         createdBy: users[0]
       },{
-        artist: 'LION BABE (ft. Moe Moks)',
-        title: 'Rockets',
-        link: 'QaLdSfZ10WA',
-        blip: 'For a track about being happy and self-confident in your own style and personality, this really couldn’t have been matched with a better duo and Lion Babe do seem to set thier own style path and follow it, daring us to come along.',
+        artist: 'Finn Foxell',
+        title: 'Buddha',
+        link: 'BvMbfiugraI',
+        blip: 'wavey.',
         createdBy: users[1]
       },{
         artist: 'Jadu Heart (ft. Mura Masa)',
