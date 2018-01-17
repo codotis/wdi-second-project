@@ -24,7 +24,7 @@
 <% track.comments.forEach((comment) => { %>
   <small><%= comment.createdBy.username %> said:- </small>
 
-  <p><%= comment.content %></p>
+  <p class="comment"><%= comment.content %></p>
 
   <% if(locals.isLoggedIn && comment.belongsTo(user)) { %>
     <form method="POST" action="/tracks/<%= track.id %>/comments/<%= comment.id %>">

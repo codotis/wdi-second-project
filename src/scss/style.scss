@@ -1,6 +1,6 @@
 // import scss partials here
 * {
-  color: blue;
+  font-family: 'Roboto Mono', monospace;
 }
 body {
   font-family: 'Helvetica', sans-serif;
@@ -8,5 +8,21 @@ body {
 }
 
 .jumbotron {
-  background-image: url("https://i.imgur.com/cyAKOE2.jpg");
+  background-image: url("https://i.imgur.com/hl87VG1.jpg");
+  background-size: cover;
+}
+
+// p {
+
+// }
+
+flash-message {
+  text-align: center;
+}
+
+.col-10 {
+    font-size: 48px;
+    color: #f2f3f4;
+    line-height: 50px;
+    margin-top: 80px;
 }

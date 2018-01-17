@@ -25,7 +25,7 @@ User
         title: 'Party Here',
         link: 'dz7eyvAMOpA',
         blip: 'Over a minimal, bass-heavy beat that nods subtly toward garage and dancehall, Octavian holds court with a delivery that bridges grime’s hardscrabble tone with the melodic, half-sung style of U.S. pop rap. His voice cracks as he reaches for notes, but this only adds to his everyman charm. ',
-        createdBy: users[0]
+        createdBy: users[0 ]
       },{
         artist: 'Archy Marshall',
         title: 'Buffed Sky',
