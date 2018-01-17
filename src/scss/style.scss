@@ -4,17 +4,14 @@
 }
 body {
   font-family: 'Helvetica', sans-serif;
-  background-image: url("https://i.imgur.com/tLXhiA8.jpg")
+  background-image: url("https://www.moons.co.uk/wp-content/uploads/2013/08/PS370-2000-05-Charcoal.jpg");
+  background-size: cover;
 }
 
 .jumbotron {
   background-image: url("https://i.imgur.com/hl87VG1.jpg");
   background-size: cover;
 }
-
-// p {
-
-// }
 
 flash-message {
   text-align: center;
@@ -25,4 +22,26 @@ flash-message {
     color: #f2f3f4;
     line-height: 50px;
     margin-top: 80px;
+}
+
+.text-center {
+  color: white;
+}
+
+.comment-color {
+  color: white;
+}
+
+.text-center.track-header {
+  margin-top: 10px;
+  font-size: 28px;
+}
+
+.embed {
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+
+.form-group {
+  color: white;
 }

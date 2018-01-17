@@ -6,11 +6,12 @@
     <div class="col-6">
       <% tracks.forEach((track) => { %>
         <a href="/tracks/<%= track.id %>">
-        <h2 class="text-center"><%= track.artist %> - <%= track.title %></h2>
+        <h2 class="text-center track-header"><%= track.artist %> - <%= track.title %></h2>
         </a>
-        <h2 class="text-center">(posted by: <%= track.createdBy.username %>)</h2>
-
-        <iframe width="600" height="330" src="https://www.youtube.com/embed/<%= track.link %>" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        <h2 class="text-center track-header">(posted by: <%= track.createdBy.username %>)</h2>
+        <div class="embed">
+        <iframe width="560" height="500" src="https://www.youtube.com/embed/<%= track.link %>" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
         <% }) %>
       </div>
       <div class="col-3">

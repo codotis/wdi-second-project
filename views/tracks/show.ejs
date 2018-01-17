@@ -22,9 +22,9 @@
 <% } %>
 
 <% track.comments.forEach((comment) => { %>
-  <small><%= comment.createdBy.username %> said:- </small>
+  <small class="comment-color"><%= comment.createdBy.username %> said:- </small>
 
-  <p class="comment"><%= comment.content %></p>
+  <p class="comment-color"><%= comment.content %></p>
 
   <% if(locals.isLoggedIn && comment.belongsTo(user)) { %>
     <form method="POST" action="/tracks/<%= track.id %>/comments/<%= comment.id %>">
@@ -36,7 +36,7 @@
 
 <% if(locals.isLoggedIn) { %>
   <section>
-    <h4>Leave a comment</h4>
+    <p class="comment-color">Add comment below</p>
     <form method="POST" action="/tracks/<%= track.id %>/comments">
       <textarea name="content" id="content" placeholder="Comment"></textarea>
       <button class="button">Leave a comment</button>
