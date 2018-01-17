@@ -6,47 +6,46 @@
 
     <div class="col-6">
 
-<h1 class="text-center"><%= track.artist %> - <%= track.title %></h4>
-  <h2 class="text-center"> (posted by: <%= track.createdBy.username %>)</h2>
+      <h1 class="text-center"><%= track.artist %> - <%= track.title %></h4>
+        <h2 class="text-center"> (posted by: <%= track.createdBy.username %>)</h2>
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/<%= track.link %>" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-<p class="text-center"><%= track.blip %></p>
+        <iframe width="560" height="500" src="https://www.youtube.com/embed/<%= track.link %>" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        <p class="text-center"><%= track.blip %></p>
 
-<%# //IF THE USER IS LOGGED IN AND THEY'VE ADDED THE TRACK, THEY CAN EDIT IT. %>
-<% if(locals.isLoggedIn && track.belongsTo(user)) { %>
-  <a href="/tracks/<%= track.id %>/edit">Edit</a>
-  <form method="POST" action="/tracks/<%= track.id %>">
-    <input type="hidden" name="_method" value="DELETE">
-    <button>Delete</button>
-  </form>
-<% } %>
+        <% if(locals.isLoggedIn && track.belongsTo(user)) { %>
+          <a href="/tracks/<%= track.id %>/edit">Edit Track</a>
+          <form method="POST" action="/tracks/<%= track.id %>">
+          <input type="hidden" name="_method" value="DELETE">
+          <button type="submit" class="btn btn-light">Remove post</button>
+          </form>
+          <% } %>
 
-<% track.comments.forEach((comment) => { %>
-  <small class="comment-color"><%= comment.createdBy.username %> said:- </small>
+          <% track.comments.forEach((comment) => { %>
 
-  <p class="comment-color"><%= comment.content %></p>
+            <small class="comment-color"><%= comment.createdBy.username %> said:- </small>
 
-  <% if(locals.isLoggedIn && comment.belongsTo(user)) { %>
-    <form method="POST" action="/tracks/<%= track.id %>/comments/<%= comment.id %>">
-      <input type="hidden" name="_method" value="DELETE">
-      <button>Delete</button>
-    </form>
-  <% } %>
-<% }) %>
+            <p class="comment-color"><%= comment.content %></p>
 
-<% if(locals.isLoggedIn) { %>
-  <section>
-    <p class="comment-color">Add comment below</p>
-    <form method="POST" action="/tracks/<%= track.id %>/comments">
-      <textarea name="content" id="content" placeholder="Comment"></textarea>
-      <button class="button">Leave a comment</button>
-    </form>
-  </section>
-<% } %>
+            <% if(locals.isLoggedIn && comment.belongsTo(user)) { %>
+              <form method="POST" action="/tracks/<%= track.id %>/comments/<%= comment.id %>">
+              <input type="hidden" name="_method" value="DELETE">
+              <button type="submit" class="btn btn-light">Remove comment</button>
+              </form>
+              <% } %>
+              <% }) %>
 
-</div>
-<div class="col-3">
-</div>
+              <% if(locals.isLoggedIn) { %>
+                <section>
+                <p class="comment-color">Add comment below</p>
+                <form method="POST" action="/tracks/<%= track.id %>/comments">
+                <textarea class="form-control" rows="3" name="content" id="content" placeholder="Comment"></textarea>
+                <button class="btn btn-primary btn-block">Leave a comment</button>
+                </form>
+                </section>
+                <% } %>
 
-</div>
-</div>
+              </div>
+              <div class="col-3">
+              </div>
+            </div>
+          </div>

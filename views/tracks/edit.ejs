@@ -1,26 +1,39 @@
 
-
-<form class="" method="POST" action="/tracks/<%= track.id %>">
-  <input type="hidden" name="_method" value="PUT">
-    <div>
-      <label for="title">Artist</label>
-      <input class="u-full-width" type="text" name="artist" id="artist" value="<%= track.artist %>">
+<div class="container">
+  <div class="row">
+    <div class="col-3">
     </div>
+    <div class="col-6">
 
-    <div>
-      <label for="author">Title</label>
-      <input class="u-full-width" type="text" name="title" id="title" value="<%= track.title %>">
+
+
+      <form class="form-margin" method="POST" action="/tracks/<%= track.id %>">
+        <input type="hidden" name="_method" value="PUT">
+        <div class="form-group">
+          <label for="artist">Artist</label>
+          <input type="text" class="form-control" name="artist" id="artist" value="<%= track.artist %>">
+        </div>
+
+        <div class="form-group">
+          <label for="title">Title</label>
+          <input type="text" class="form-control" name="title" id="title" value="<%= track.title %>">
+        </div>
+
+        <div class="form-group">
+          <label for="link">Link</label>
+          <input type="text" class="form-control" name="link" id="link" value="<%= track.link %>">
+        </div>
+
+        <div class="form-group">
+          <label for="description">Blip</label>
+          <textarea class="form-control" rows="5" name="blip"><%= track.blip %></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block">Update Track</button>
+      </form>
+
     </div>
-
-    <div>
-      <label for="author">Link</label>
-      <input class="u-full-width" type="text" name="link" id="link" value="<%= track.link %>">
+    <div class="col-3">
     </div>
-
-    <div>
-      <label for="description">Blip</label>
-      <textarea class="u-full-width" name="blip"><%= track.blip %></textarea>
-    </div>
-
-    <button class="button-primary u-full-width">Update</button>
-</form>
+  </div>
+</div>
