@@ -44,6 +44,24 @@ User
         link: '0nplzEY0IXA',
         blip: 'Pinned by a funk-filled bassline, ELIZA\'s soaring vocal glides all over the plodding instrumental, equal parts seductive and soothing.',
         createdBy: users[0]
+      },{
+        artist: 'James Vincent McMorrow',
+        title: 'Rising Water (A.K. Paul Remix)',
+        link: 'QvZT6RLSWKs',
+        blip: 'A.K. Paul, the reclusive-but-not-in-comparison-to-brother-Jai producer, has remixed James Vincent McMorrow\'s "Rising Water".',
+        createdBy: users[0]
+      },{
+        artist: 'LION BABE (ft. Moe Moks)',
+        title: 'Rockets',
+        link: 'QaLdSfZ10WA',
+        blip: 'For a track about being happy and self-confident in your own style and personality, this really couldn’t have been matched with a better duo and Lion Babe do seem to set thier own style path and follow it, daring us to come along.',
+        createdBy: users[0]
+      },{
+        artist: 'Jadu Heart (ft. Mura Masa)',
+        title: 'U Never Call Me',
+        link: 'Tn1uf-HU5U4',
+        blip: 'After racking up starry collabs with A$AP Rocky, Charli XCX and Damon Albarn on his debut album, Mura Masa – AKA Guernsey-born production polymath Alex Crossan – pays it forward with Jadu Heart, the masked duo signed to his own label. The resulting team-up is a deluxe tiramisu of accusatory whisperpop that, in the early running at least, seems to incorporate a squeaky toy into its seductive cosmic tropicalia.',
+        createdBy: users[0]
       }])
       .then((track) => {
         console.log(`${track.length} new singles created!`);
