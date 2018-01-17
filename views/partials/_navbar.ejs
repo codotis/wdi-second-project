@@ -13,21 +13,22 @@
         <li class="nav-item">
           <a class="nav-item nav-link" href="/login">Login</a>
         </li>
-      <% } else { %>
-        <li class="nav-item">
-          <a class="nav-item nav-link" href="/users/<%= currentUser.id %>">Profile</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-item nav-link" href="/tracks">Feed</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-item nav-link" href="/tracks/new">Post Track</a>
-        </li>
-        <li class="nav-item">
+        <% } else { %>
+          <li class="nav-item">
+            <a class="nav-item nav-link" href="/users/<%= currentUser.id %>">Profile</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-item nav-link" href="/tracks">Feed</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-item nav-link" href="/tracks/new">Post Track</a>
+          </li>
+          <li class="nav-item">
         </ul>
-        <ul class="navbar-item ml-auto"
-          <a class="nav-item nav-link" href="/logout">Sign out</a>
-        </li>
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-item nav-link" href="/logout">Sign out</a>
+          </li>
         </ul>
       <% } %>
     </ul>

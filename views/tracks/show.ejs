@@ -9,7 +9,7 @@
       <h1 class="text-center"><%= track.artist %> - <%= track.title %></h4>
         <h2 class="text-center"> (posted by: <%= track.createdBy.username %>)</h2>
 
-        <% if(locals.isLoggedIn && track.belongsTo(user)) { %>
+        <% if(locals.isLoggedIn && track.belongsTo(currentUser)) { %>
           <a href="/tracks/<%= track.id %>/edit">Edit Track</a>
           <form method="POST" action="/tracks/<%= track.id %>">
           <input type="hidden" name="_method" value="DELETE">
@@ -37,7 +37,7 @@
 
             <p class="comment-color"><%= comment.content %></p>
 
-            <% if(locals.isLoggedIn && comment.belongsTo(user)) { %>
+            <% if(locals.isLoggedIn && comment.belongsTo(currentUser)) { %>
               <form method="POST" action="/tracks/<%= track.id %>/comments/<%= comment.id %>">
               <input type="hidden" name="_method" value="DELETE">
               <button type="submit" class="btn btn-light">Remove comment</button>

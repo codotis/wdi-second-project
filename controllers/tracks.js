@@ -4,6 +4,7 @@ function indexRoute(req, res, next) {
   Track
     .find()
     .populate('createdBy')
+    .sort('-createdAt')
     .exec()
     .then((tracks) => res.render('tracks/index', { tracks }))
     .catch(next);

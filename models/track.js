@@ -19,6 +19,8 @@ const trackSchema = new mongoose.Schema({
   blip: { type: String, required: true },
   createdBy: { type: mongoose.Schema.ObjectId, ref: 'User', required: true },
   comments: [ commentSchema ]
+}, {
+  timestamps: true
 });
 
 trackSchema.methods.belongsTo = function trackBelongsTo(user) {

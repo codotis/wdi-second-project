@@ -1,7 +1,16 @@
-<h1>User profile</h1>
-
 <p><%= user.username %></p>
 <a href="/users/follow/<%= user.id %>">Follow</a>
 
 <p>Followers: <span><%= user.followers.length %></span></p>
 <p>Following: <span><%= user.following.length %></span></p>
+
+<div class="">
+  <% user.tracks.forEach((track) => { %>
+    <a href="/tracks/<%= track.id %>">
+      <h2 class="text-center track-header"><%= track.artist %> - <%= track.title %></h2>
+    </a>
+    <div class="embed">
+    <iframe width="560" height="500" src="https://www.youtube.com/embed/<%= track.link %>" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    </div>
+    <% }) %>
+</div>

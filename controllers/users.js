@@ -3,18 +3,14 @@ const User = require('../models/user');
 function showRoute(req, res, next) {
   User
     .findById(req.params.id)
-    .populate('followers following')
+    .populate('followers following tracks')
     .exec()
     .then(user => {
       // find all tracks where the createdBy matches the current user id
-
-
-
       res.render('users/show', { user });
-    })  
+    })
     .catch(next);
 }
-
 
 function followRoute(req, res, next) {
   const followerId = req.params.id;

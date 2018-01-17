@@ -9,6 +9,12 @@ const userSchema = new mongoose.Schema({
   followers: [{ type: mongoose.Schema.ObjectId, ref: 'User'}]
 });
 
+userSchema.virtual('tracks', {
+  ref: 'Track',
+  localField: '_id',
+  foreignField: 'createdBy'
+});
+
 userSchema.virtual('passwordConfirmation')
   .set(function setPasswordConfirmation(passwordConfirmation) {
     this._passwordConfirmation = passwordConfirmation;
