@@ -1,6 +1,7 @@
 @import 'views/tracks/index';
 @import 'views/tracks/show';
 @import 'views/users/show';
+@import 'views/home/home';
 
 
 
@@ -23,12 +24,6 @@ flash-message {
   text-align: center;
 }
 
-.col-10 {
-    font-size: 48px;
-    color: #f2f3f4;
-    line-height: 50px;
-    margin-top: 80px;
-}
 
 .text-center {
   color: white;
