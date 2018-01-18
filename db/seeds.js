@@ -36,11 +36,17 @@ User
     console.log(`${users.length} users created`);
     return Track
       .create([{
-        artist: 'Nina Simone',
-        title: 'Sinnerman',
+        artist: 'J Dilla (ft. Common & D\'Angelo)',
+        title: 'So Far To Go',
         link: 'AdZK0HeYkwM',
-        blip: 'What\'s the matter with you, rock?',
-        createdBy: users[1]
+        blip: 'Dillatronic',
+        createdBy: users[0]
+      },{
+        artist: 'Slum Village',
+        title: 'Fall In Love',
+        link: 's732BigTxZk',
+        blip: 'FANTASTIC',
+        createdBy: users[0]
       },{
         artist: 'Nina Simone',
         title: 'Sinnerman',
@@ -71,6 +77,12 @@ User
         link: '8ECLpFVE5pE',
         blip: 'Enter Rex Orange County. With his excellent 2017 album Apricot Princess and contributions to Tyler, The Creator\'s new album fresh in our minds, he\'s back with a new song that showcases his emotional depth and honest songwriting. Over somber piano chords, he sings of a crumbling relationship in a charmingly relatable way: "I understand you had a bad day and shit / So I say something dumb as fuck."',
         createdBy: users[2]
+      },{
+        artist: 'LION BABE (ft. Moe Moks)',
+        title: 'Rockets',
+        link: 'QaLdSfZ10WA',
+        blip: 'In a world full of chaos it’s a breath of fresh air to hear harmonious vocals, over a 70’s bassline, and hip-hop influenced chants.Lion Babe just released their new single titled Rockets featuring Moe Moks, and it is everything I love about the feel-good duo. The beat is a perfect vibe setter, mellow and fresh with vocals from Jillian taking us on a ride through the sky.',
+        createdBy: users[3]
       },{
         artist: 'Eliza',
         title: 'Wasn\'t Looking',
