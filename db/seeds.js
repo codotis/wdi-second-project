@@ -36,6 +36,12 @@ User
     console.log(`${users.length} users created`);
     return Track
       .create([{
+        artist: 'Nina Simone',
+        title: 'Sinnerman',
+        link: 'QH3Fx41Jpl4',
+        blip: 'What\'s the matter with you, rock?',
+        createdBy: users[0]
+      },{
         artist: 'Octavian',
         title: 'Party Here',
         link: 'dz7eyvAMOpA',
