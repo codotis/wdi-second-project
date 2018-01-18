@@ -7,6 +7,9 @@ const expressLayouts = require('express-ejs-layouts');
 const flash = require('express-flash');
 const routes         = require('./config/routes');
 const authentication = require('./lib/authentication');
+const errorHandler = require('./lib/errorHandler');
+const customResponses = require('./lib/customResponses');
+
 const mongoose       = require('mongoose');
 mongoose.Promise     = require('bluebird');
 const { port, env, dbURI, secret } = require('./config/environment');
@@ -22,6 +25,7 @@ app.use(expressLayouts);
 app.use(express.static(`${__dirname}/public`));
 if(env === 'development') app.use(morgan('dev'));
 
+app.use(customResponses);
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(methodOverride((req) => {
@@ -40,10 +44,8 @@ app.use(session({
 
 app.use(flash());
 
-
 app.use(authentication);
-
-
 app.use(routes);
+app.use(errorHandler);
 
 app.listen(port, () => console.log(`Express is listening on port ${port}`));

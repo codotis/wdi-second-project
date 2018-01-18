@@ -5,24 +5,25 @@ const registrations = require('../controllers/registrations');
 const sessions = require('../controllers/sessions');
 const tracks = require('../controllers/tracks');
 const users = require('../controllers/users');
+const secureRoute = require('../lib/secureRoute');
 
 router.route('/')
   .get(statics.index);
 
 router.route('/tracks')
   .get(tracks.index)
-  .post(tracks.create);
+  .post(secureRoute, tracks.create);
 
 router.route('/tracks/new')
-  .get(tracks.new);
+  .get(secureRoute, tracks.new);
 
 router.route('/tracks/:id')
   .get(tracks.show)
-  .put(tracks.update)
-  .delete(tracks.delete);
+  .put(secureRoute, tracks.update)
+  .delete(secureRoute, tracks.delete);
 
 router.route('/tracks/:id/edit')
-  .get(tracks.edit);
+  .get(secureRoute, tracks.edit);
 
 router.route('/tracks/:id/comments')
   .post(tracks.createComment);

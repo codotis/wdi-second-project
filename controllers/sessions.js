@@ -14,7 +14,7 @@ function sessionsCreate(req, res) {
       }
 
       req.session.userId = user.id;
-      res.redirect('/');
+      res.redirect('/tracks');
     })
     .catch(() => {
       res.status(500).end();
