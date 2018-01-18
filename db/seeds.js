@@ -87,7 +87,7 @@ User
         artist: 'A.K. Paul',
         title: 'Be Honest',
         link: 'H7ccAWPBwyc',
-        blip: 'After racking up starry collabs with A$AP Rocky, Charli XCX and Damon Albarn on his debut album, Mura Masa – AKA Guernsey-born production polymath Alex Crossan – pays it forward with Jadu Heart, the masked duo signed to his own label. The resulting team-up is a deluxe tiramisu of accusatory whisperpop that, in the early running at least, seems to incorporate a squeaky toy into its seductive cosmic tropicalia.',
+        blip: 'Rare',
         createdBy: users[3]
       },{
         artist: 'HEX',
