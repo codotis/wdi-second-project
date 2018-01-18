@@ -6,8 +6,9 @@
 
     <div class="col-6">
 
-      <h1 class="text-center"><%= track.artist %> - <%= track.title %></h4>
-        <h2 class="text-center"> (posted by: <%= track.createdBy.username %>)</h2>
+      <h1 class="text-center track-header"><%= track.artist %> - <%= track.title %></h4>
+        <h2 class="text-center track-posted"> (posted by: <%= track.createdBy.username %>)</h2>
+        <h2 class="text-center track-posted-barcode"> <%= track.createdBy.username %> </h2>
 
         <% if(locals.isLoggedIn && track.belongsTo(currentUser)) { %>
           <a href="/tracks/<%= track.id %>/edit">Edit Track</a>
