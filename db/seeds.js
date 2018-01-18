@@ -26,6 +26,11 @@ User
     email: 'hacker@gmail.com',
     password: 'password',
     passwordConfirmation: 'password'
+  },{
+    username: 'Robotduck112',
+    email: 'robot@gmail.com',
+    password: 'password',
+    passwordConfirmation: 'password'
   }])
   .then((users) => {
     console.log(`${users.length} users created`);
@@ -72,6 +77,24 @@ User
         link: 'Tn1uf-HU5U4',
         blip: 'After racking up starry collabs with A$AP Rocky, Charli XCX and Damon Albarn on his debut album, Mura Masa – AKA Guernsey-born production polymath Alex Crossan – pays it forward with Jadu Heart, the masked duo signed to his own label. The resulting team-up is a deluxe tiramisu of accusatory whisperpop that, in the early running at least, seems to incorporate a squeaky toy into its seductive cosmic tropicalia.',
         createdBy: users[2]
+      },{
+        artist: 'Cosmo Pyke',
+        title: 'Chronic Sunshine',
+        link: 'iOSSAQPt-Ro',
+        blip: 'Half slinking lift jazz, and half velvet-edged croon, Cosmo Pyke’s latest is a smoothly inventive slice of chameleon-shifting sunshine.',
+        createdBy: users[3]
+      },{
+        artist: 'A.K. Paul',
+        title: 'Be Honest',
+        link: 'H7ccAWPBwyc',
+        blip: 'After racking up starry collabs with A$AP Rocky, Charli XCX and Damon Albarn on his debut album, Mura Masa – AKA Guernsey-born production polymath Alex Crossan – pays it forward with Jadu Heart, the masked duo signed to his own label. The resulting team-up is a deluxe tiramisu of accusatory whisperpop that, in the early running at least, seems to incorporate a squeaky toy into its seductive cosmic tropicalia.',
+        createdBy: users[3]
+      },{
+        artist: 'HEX',
+        title: 'Gene Kelly',
+        link: 'Tn1uf-HU5U4',
+        blip: 'In this climate where fusion of music styles is becoming more and more prominent Hex manages to remain unique. In Gene Kelly there’s almost afro-swing vibes akin to the likes of a Yxng Bane, Kojo Funds or Not3s.',
+        createdBy: users[3]
       }])
       .then((track) => {
         console.log(`${track.length} new singles created!`);

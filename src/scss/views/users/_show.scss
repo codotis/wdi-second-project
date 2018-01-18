@@ -1,6 +1,6 @@
 .follow {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   color: white;
 }
 
@@ -22,4 +22,8 @@ a {
   .username {
     font-size: 24px;
   }
+}
+
+.follow {
+  margin-top: 40px;
 }
