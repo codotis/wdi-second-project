@@ -1,16 +1,46 @@
-<p><%= user.username %></p>
-<a href="/users/follow/<%= user.id %>">Follow</a>
-
-<p>Followers: <span><%= user.followers.length %></span></p>
-<p>Following: <span><%= user.following.length %></span></p>
-
-<div class="">
-  <% user.tracks.forEach((track) => { %>
-    <a href="/tracks/<%= track.id %>">
-      <h2 class="text-center track-header"><%= track.artist %> - <%= track.title %></h2>
-    </a>
-    <div class="embed">
-    <iframe width="560" height="500" src="https://www.youtube.com/embed/<%= track.link %>" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<div class="container">
+  <div class="row">
+    <div class="col text-center">
+      <p><%= user.username %></p>
     </div>
-    <% }) %>
-</div>
+  </div>
+  <div class="row">
+    <div class="col-3">
+    </div>
+    <div class="col-3">
+      <p>Followers: <span><%= user.followers.length %></span></p>
+    </div>
+    <div class="col-3">
+      <p>Following: <span><%= user.following.length %></span></p>
+    </div>
+    <div class="col-3">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col text-center">
+
+      <a href="/users/follow/<%= user.id %>">Follow</a>
+
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-3">
+    </div>
+    <div class="col-6">
+      <div class="">
+        <% user.tracks.forEach((track) => { %>
+          <a href="/tracks/<%= track.id %>">
+          <h2 class="text-center track-header"><%= track.artist %> - <%= track.title %></h2>
+          </a>
+          <div class="embed">
+          <iframe width="560" height="500" src="https://www.youtube.com/embed/<%= track.link %>" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+          </div>
+          <% }) %>
+        </div>
+      </div>
+      <div class="col-3">
+      </div>
+    </div>
+
+  </div>
