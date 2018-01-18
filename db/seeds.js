@@ -38,9 +38,21 @@ User
       .create([{
         artist: 'Nina Simone',
         title: 'Sinnerman',
+        link: 'AdZK0HeYkwM',
+        blip: 'What\'s the matter with you, rock?',
+        createdBy: users[1]
+      },{
+        artist: 'Nina Simone',
+        title: 'Sinnerman',
         link: 'QH3Fx41Jpl4',
         blip: 'What\'s the matter with you, rock?',
-        createdBy: users[0]
+        createdBy: users[1]
+      },{
+        artist: 'Erykah Badu',
+        title: 'Other Side Of The Game',
+        link: '3qpyDUfMq-8',
+        blip: 'Pretty smooth if I say so myself',
+        createdBy: users[2]
       },{
         artist: 'Octavian',
         title: 'Party Here',
