@@ -9,7 +9,7 @@
           <h2 class="text-center track-header"><%= track.artist %> - <%= track.title %></h2>
         </a>
         <a href="/users/<%= track.createdBy.id %>">
-          <h2 class="text-center track-posted">(posted by: <%= track.createdBy.username %>)</h2>
+          <h2 class="text-center track-posted">posted by: <%= track.createdBy.username %></h2>
         </a>
         <div class="embed">
         <iframe width="560" height="500" src="https://www.youtube.com/embed/<%= track.link %>" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>

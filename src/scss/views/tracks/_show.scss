@@ -6,9 +6,22 @@
 .text-center.track-posted {
   margin-top: 10px;
   font-size: 20px;
+  font-style: italic;
 }
 
 .text-center.track-posted-barcode {
   font-family: 'Libre Barcode 39', cursive;
   font-size: 48px;
+}
+
+.comment-color {
+  color: white;
+}
+
+.user-color {
+  color: white;
+}
+
+.comments {
+  margin-bottom: 50px;
 }
