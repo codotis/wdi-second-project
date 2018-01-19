@@ -122,7 +122,7 @@ User
       },{
         artist: 'HEX',
         title: 'Gene Kelly',
-        link: 'Tn1uf-HU5U4',
+        link: 'oBT29qICFDA',
         blip: 'In this climate where fusion of music styles is becoming more and more prominent Hex manages to remain unique. In Gene Kelly there’s almost afro-swing vibes akin to the likes of a Yxng Bane, Kojo Funds or Not3s.',
         createdBy: users[3]
       }])
