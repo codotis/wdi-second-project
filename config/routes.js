@@ -48,5 +48,4 @@ router.route('/login')
 router.route('/logout')
   .get(sessions.delete);
 
-
 module.exports = router;

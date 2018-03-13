@@ -11,7 +11,7 @@
   "engines": {
     "node": "9.2.0"
   },
-  "author": "Otis Vickers-Graver <otisvickersgraver@gmail.com> (https://github.com/mickyginger)",
+  "author": "Otis Vickers-Graver <otisvickersgraver@gmail.com> (https://github.com/codotis)",
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^1.0.3",
